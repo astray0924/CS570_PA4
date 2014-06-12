@@ -52,6 +52,8 @@ sup_vals = [];
 for j = 1:N
    sup_vals(j, 1) = Y(j)*(w'*X(j, :)' + w0);
 end
-sup = find(sup_vals <= 1);
+
+sup = find((sup_vals - 1) <= 0.0001);
+
 end
 
